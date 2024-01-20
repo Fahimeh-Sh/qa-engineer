@@ -3,6 +3,7 @@ customer wants to purchase something by credit card with sufficient funds in acc
 @mytag
 Scenario: Successful Payment by customer
 Given the customer has valid credentials and there are sufficient funds in the account
-When the customer initiates a payment for the AmountDue
+When the customer initiates a payment for the AmountDue, customer has x dollar in credit card
 Then the system should process the payment successfully, and the customer should receive a confirmation message via email and SMS
-And history of payment must retrievable in customer profile account with product owner mentioned items
+And history of Successful payment must retrievable in customer profile account with product owner mentioned items
+And customer credit card must be x-payment amount(may payment include tax or not it should check by PO)
