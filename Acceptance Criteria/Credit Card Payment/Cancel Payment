@@ -1,0 +1,9 @@
+Feature: Cancel Payment 
+customer wants to purchase something by credit card with sufficient/insufficient funds in account 
+@mytag
+Scenario: Cancel Payment by customer
+Given the customer has valid credentials and there are sufficient/insufficient funds in the account and initiated a payment
+When the customer cancels the payment
+Then the system should cancel the payment and provide a confirmation message to customer, and infrom customer via email and SMS
+And history of cancel payment must retrievable in customer profile account with with product owner mentioned items
+And customer credit card balance must be same as before, no deduction must happen
