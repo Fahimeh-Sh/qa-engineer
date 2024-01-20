@@ -1,0 +1,8 @@
+Feature: Failed  Payment 
+customer wants to purchase something by credit card with not sufficient funds in account 
+@mytag
+Scenario: Failed Payment by customer
+Given the customer has valid credentials while have insufficient funds in account 
+When the customer attempts to make a payment with insufficient funds or other issues
+Then the system should reject the payment and provide an appropriate error message
+And history of unsucessful payment must retrievable in customer profile account with product owner mentioned items
