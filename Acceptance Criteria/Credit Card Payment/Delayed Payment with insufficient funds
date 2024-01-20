@@ -1,0 +1,10 @@
+Feature: Delayed Payment
+customer wants to purchase something by credit card with insufficient funds in account 
+@mytag
+Scenario: Delayed Payment with insufficient funds by customer
+Given the customer has valid credentials and there are insufficient funds in the account
+When the customer initiates a payment for the AmountDue
+Then the system should acknowledge the delayed processing and inform the customer that it may take some time
+And delay solved, payment must not done, no deduction from credit card must happen
+And Proper message must send to customer, unsucessful payment because of insufficient funds
+And history of unsucessful payment must retrievable in customer profile account with product owner mentioned items
