@@ -1,0 +1,9 @@
+Feature: Delayed Payment
+customer wants to purchase something by credit card with sufficient funds in account 
+@mytag
+Scenario: Delayed Payment with sufficient funds by customer
+Given the customer has valid credentials and there are sufficient funds in the account
+When the customer initiates a payment for the AmountDue
+Then the system should acknowledge the delayed processing and inform the customer that it may take some time
+And if payment done by system,history of payment must retrievable in customer profile account with product owner mentioned items, and credit card amount must deduct with AmountDue with or wihtout tax check tax with PO
+And if payment didn't done, no deduction from credit card must happen
