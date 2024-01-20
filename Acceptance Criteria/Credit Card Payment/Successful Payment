@@ -6,4 +6,5 @@ Given the customer has valid credentials and there are sufficient funds in the a
 When the customer initiates a payment for the AmountDue, customer has x dollar in credit card
 Then the system should process the payment successfully, and the customer should receive a confirmation message via email and SMS
 And history of Successful payment must retrievable in customer profile account with product owner mentioned items
-And customer credit card must be x-payment amount(may payment include tax or not it should check by PO)
+And customer credit card must be x-AmountDue amount(may payment include tax or not it should check by PO)
+And customer will be informed about credit card deduction via email or SMS
